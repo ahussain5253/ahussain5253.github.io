@@ -15,13 +15,16 @@
             
         }
         button {
-            font-weight: bold;
+            font-weight: 900;
             border-radius: 5px;
             border: solid 1px;
+            font-size: 1rem;
         }
         input{
             border-radius: 5px;
             border: solid 1px;
+            font-size: 1rem;
+            font-weight: 900;
         }
         #retrieve {
             display: none;
@@ -42,7 +45,8 @@
             const id = $("#id").val()
             $("#submit").prop('disabled', true)
             $("#retrieve").css('display', 'block')
-            $("#form").attr('action', 'https://script.google.com/macros/s/AKfycbzMSQYvCaTwrhFCwMwHB8SdFxVB78xQQRBA9E2gR6lVL5GbeTVP4aRkY05NYC8bWc8/exec?id=' + id)
+            let url = 'https://script.google.com/macros/s/AKfycbw49QhJWH9-RYgh3e6eABp3I1gqqEDyXLRFkb4tZhwlL04RXrWJrb0aU-pEdcj85_VZ/exec'
+            $("#form").attr('action', url + '?id=' + id)
             
             setTimeout(() => {
                 return true
