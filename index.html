@@ -1,8 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+        * {
+            font-family: 'Quicksand', sans-serif;
+            
+        }
+        button {
+            font-weight: 900;
+            border-radius: 5px;
+            border: solid 1px;
+            font-size: 1rem;
+        }
+        input{
+            border-radius: 5px;
+            border: solid 1px;
+            font-size: 1rem;
+            font-weight: 900;
+        }
+        #retrieve {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1010763661?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Urus Syedna Mohammed Burhanuddin RA Waaz Mubarak 1446"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+    <h1>View your accommodation and transportation info</h1>
+    <h2>Please enter your ITS id: </h2>
+    <form action="" method="get" id="form" target="_self">
+        <input type="text" name="id" id="id">
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <h3 id="retrieve">Retrieving information ...</h3>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $("#form").submit(() => {
+            const id = $("#id").val()
+            $("#submit").prop('disabled', true)
+            $("#retrieve").css('display', 'block')
+            let url = 'https://script.google.com/macros/s/AKfycbw1yI1PrMDFBLXdt36dKcAicnNUVUIRzcwPySq9SeFKUxvgKi3Q8Br65eijTf-Mq8I/exec'
+            $("#form").attr('action', url + '?id=' + id)
+            
+            setTimeout(() => {
+                return true
+            }, 2000)
+        })
+    </script>
 </body>
 </html>
